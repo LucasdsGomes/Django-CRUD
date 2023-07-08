@@ -1,74 +1,108 @@
-# CRUD com Django
-[Django Logo](https://www.djangoproject.com/m/img/logos/django-logo-negative.png)
+<h1 align="center">People ID</h1>
 
-Bem-vindo ao repositório do CRUD com Django! Neste projeto, você encontrará um aplicativo CRUD (Create, Read, Update, Delete) desenvolvido em Django, um framework de desenvolvimento web em Python. Este projeto é ideal para iniciantes que desejam aprender o básico do Django e sua integração com HTML usando Bootstrap e CSS.
+<p align="center" >
+  <img alt="print do projeto" width="400" src="https://github.com/LucasdsGomes/Django-CRUD/assets/114450172/96d2aeb2-37cc-430e-a75b-c720d00849fa">
+</p>
 
-![image](https://github.com/LucasdsGomes/Django-CRUD/assets/114450172/96d2aeb2-37cc-430e-a75b-c720d00849fa)
+---
 
+Neste projeto você encontrará um aplicativo que tem como o intuito ser um sistema para gerenciamento de funcionarios de 
+uma empresa, atualmente ele apenas faz o gerenciamento de funcionario, mas calma que ele ainda só está començando. 
+As próximas features serão o incremento dos dados das pessoas com novas informações e gerenciamento de setores e seus 
+funcionarios, se tiver mais algum ideias de feature para implementarmos crie uma issue ou me envia no 
+[linkedin](https://www.linkedin.com/in/lucasdsgomes/).
 
-# Funcionalidades
-O CRUD com Django possui as seguintes funcionalidades:
+O projeto está sendo desenvolvido em Django, um framework de desenvolvimento web em Python. O intuito desse projeto é ser um modelo
+ideal para iniciantes que desejam aprender o básico do Django e sua integração com HTML usando Bootstrap e CSS.
 
-Adicionar: Permite adicionar novos itens ao banco de dados.
-Listar: Exibe uma lista de todos os itens existentes no banco de dados.
-Detalhar: Mostra os detalhes de um item específico selecionado.
-Editar: Permite a edição dos dados de um item existente.
-Deletar: Remove um item do banco de dados permanentemente.
-Configuração do Ambiente
+---
+
+## Tecnologias:
+
+- Python
+- Django
+- HTML
+- CSS
+- Bootstrap
+- SQLite
+
+---
+
+## Funcionalidades:
+
+- Gerencimento de funcionarios.
+- Autenticação (em andamento).
+- Gerenciamento de setores de uma empresa (em andamento).
+- Visualização da tabela de folga de um setor (em andamento).
+
+---
+
+## Configuração do Ambiente
+
+### Instalação das dependencias:
+
 Antes de executar o projeto, certifique-se de ter as seguintes dependências instaladas em sua máquina:
 
-Python 
-Django 
-Bootstrap
-CSS
+- Python
 
-# Instalação e Execução
 Faça o clone deste repositório em sua máquina local usando o seguinte comando:
-      git clone https://github.com/seu-usuario/crud-django-bootstrap.git
+
+```bash
+git clone https://github.com/seu-usuario/crud-django-bootstrap.git
+```
       
 Navegue até o diretório do projeto:
-  cd crud-django-bootstrap
 
-Crie um ambiente virtual (recomendado) para isolar as dependências do projeto:
-  python -m venv venv
+```bash
+cd crud-django-bootstrap
+```
+
+Crie um ambiente virtual para isolar as dependências do projeto:
+
+```bash
+python -m venv venv
+```
 
 Ative o ambiente virtual:
-  No Windows:
+
+- No Windows:
+
+  ```bash
   venv\Scripts\activate
+  ```
 
+- No macOS e Linux:
 
-  No macOS e Linux:
+  ```bash
   source venv/bin/activate
+  ```
+
 Instale as dependências do projeto:
 
-  pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
+```
+
+### Preparação do banco de dados:
+
 Execute as migrações do Django para criar as tabelas do banco de dados:
-  python manage.py migrate
-  
-Inicie o servidor de desenvolvimento do Django:
-  python manage.py runserver
 
-  
+```bash
+python manage.py migrate
+```
+
+Inicialização do servidor Django em desenvolvimento:
+
+```bash
+python manage.py runserver
+```
+
+---  
+
+## Acesso ao sistema:
+
 Abra o navegador e visite o endereço http://localhost:8000 para ver o projeto em ação.
-Estrutura do Projeto
-O projeto possui a seguinte estrutura de arquivos:
 
-crud-django-bootstrap/
-│
-├── crud_app/
-│   ├── migrations/
-│   ├── static/
-│   ├── templates/
-│   │   └── crud_app/
-│   │       ├── index.html
-│   │       ├── update.html
-│   ├── admin.py
-│   ├── models.py
-│   ├── urls.py
-│   └── views.py
-│
-├── manage.py
-└── README.md
+## Contribuindo
 
-# Contribuindo
 Se você deseja contribuir com melhorias ou correções, fique à vontade para abrir uma pull request explicando as mudanças propostas. Será um prazer contar com sua colaboração!
