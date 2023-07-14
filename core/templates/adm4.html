@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gerenciamento de pessoas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        .table th, .table td {
+            vertical-align: middle;
+        }
+        body {
+            background: linear-gradient(120deg, #b0d9ea, #f7d6e0);
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .container {
+            max-width: 1500px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 40px;
+          }
+          .form-group {
+            text-align: center;
+          }
+          h1 {
+            background: linear-gradient(120deg, #385f72, #3ac280);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+          }
+          .form-control {
+            border: 2px solid #385f72;
+            border-radius: 5px;
+            padding: 8px;
+          }
+          .btn {
+            background-color: #3ac280;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+          }
+          .btn:hover {
+            background-color: #2a966e;
+          }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table mt-4">
+                    <h1>Gerenciamento de Colheita</h1>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Data de Nascimento</th>
+                            <th>CPF</th>
+                            <th>Endereço</th>
+                            <th>Logradouro</th>
+                            <th>Complemento</th>
+                            <th>Função Exercida</th>
+                            <th>Salário</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for funcionario in funcionarios %}
+                            <tr>
+                                <td>{{ funcionario.id }}</td>
+                                <td>{{ funcionario.nome }}</td>
+                                <td>{{ funcionario.data_nascimento }}</td>
+                                <td>{{ funcionario.cpf }}</td>
+                                <td>{{ funcionario.endereco }}</td>
+                                <td>{{ funcionario.logradouro }}</td>
+                                <td>{{ funcionario.complemento }}</td>
+                                <td>{{ funcionario.func }}</td>
+                                <td>{{ funcionario.salario }}</td>
+                                <td>
+                                    <a href="{% url 'editar' funcionario.id %}" class="btn btn-sm btn-primary">Editar</a>
+                                    <a href="{% url 'delete' funcionario.id %}" class="btn btn-sm btn-danger">Deletar</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+</body>
+</html>

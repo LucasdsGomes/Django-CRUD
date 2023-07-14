@@ -16,11 +16,11 @@
       align-items: center;
     }
     .container {
-      max-width: 400px;
+      max-width: 600px;
       border-radius: 10px;
       background-color: white;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 20px;
+      padding: 40px;
     }
     .form-group {
       text-align: center;
@@ -46,11 +46,42 @@
 </head>
 <body>
   <div class="container">
-    <form action="{% url 'update' pessoa.id %}" method="POST">
+    <form action="{% url 'update' funcionario.id %}" method="POST">
       {% csrf_token %}
       <div class="form-group">
-        <h1>{{ pessoa.id }} - {{ pessoa.nome }}</h1>
-        <input type="text" name="nome" class="form-control mt-3" value="{{pessoa.nome}}">
+        <h1>{{ funcionario.id }} - {{ funcionario.nome }}</h1>
+        <div class="row">
+          <div class="col-md-6">
+            <input type="text" name="nome" class="form-control" value="{{ funcionario.nome }}" required>
+          </div>
+          <div class="col-md-6">
+            <input type="date" name="data_nascimento" class="form-control" value="{{ funcionario.data_nascimento|date:'Y-m-d' }}" required>
+          </div>          
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <input type="text" name="cpf" class="form-control" value="{{ funcionario.cpf }}" required>
+          </div>
+          <div class="col-md-6">
+            <input type="text" name="endereco" class="form-control" value="{{ funcionario.endereco }}" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <input type="text" id="logradouro" name="logradouro" class="form-control" value="{{ funcionario.logradouro }}" required>
+          </div>
+          <div class="col-md-6">
+            <input type="text" id="complemento" name="complemento" class="form-control" value="{{ funcionario.complemento }}">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <input type="text" name="func" class="form-control" value="{{ funcionario.func }}" required>
+          </div>
+          <div class="col-md-6">
+            <input type="text" name="salario" class="form-control" value="{{ funcionario.salario }}" required>
+          </div>
+        </div>
         <button type="submit" class="btn btn-success mt-3">Salvar</button>
       </div>
     </form>

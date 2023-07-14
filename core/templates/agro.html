@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gerenciamento de pessoas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+        background: linear-gradient(120deg, #b0d9ea, #f7d6e0);
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+    .navbar-brand {
+      letter-spacing: 3px;
+      color: #c24244;
+    }
+    
+    .navbar-brand:hover {
+        color: #c24244;
+    }
+    
+    .navbar-scroll .nav-link,
+    .navbar-scroll .fa-bars {
+      color: #7f4722;
+    }
+    
+    .navbar-scrolled .nav-link,
+    .navbar-scrolled .fa-bars {
+      color: #7f4722;
+    }
+    
+    .navbar-scrolled {
+      background-color: #ffede7;
+    }
+    .img-container {
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+    
+      .img-container:hover img {
+        transform: scale(1.1);
+      }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-scroll shadow-0" style="background-color: #ffede7;">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'agro' %}">
+        Djagro Gerenciamento
+      </a>
+      <button class="navbar-toggler ps-0" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+        aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="d-flex justify-content-start align-items-center">
+          <i class="fas fa-bars"></i>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarExample01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link px-3" href="{% url 'setor' %}" style="font-size: 13px;">Setores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3" href="#!" style="font-size: 13px;">Funcionamento</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3" href="#!" style="font-size: 13px;">Sobre Nós</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link px-3 bg-warning" style="border-radius: 20px; font-size: 13px;" href="{% url 'login' %}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3 bg-danger-subtle" style="border-radius: 20px; margin-left: 5px; font-size: 13px;" href="{% url 'registre' %}">Registre-se</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3 bg-danger-subtle" style="border-radius: 20px; margin-left: 5px; font-size: 13px;" href="{% url 'registro' %}">Trabalhe Conosco</a>
+          </li>
+        </ul>
+        <form class="d-flex p-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Procure" aria-label="Search">
+            <button class="btn btn-outline-warning" type="submit">Pesquisar</button>
+        </form>
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item">
+            <a href="https://www.linkedin.com/in/lucasdsgomes/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path fill="#2867B2" d="M21.8,0H2.2C0.985,0,0,0.985,0,2.2v19.6C0,23.015,0.985,24,2.2,24h19.6c1.216,0,2.2-0.985,2.2-2.2V2.2 C24,0.985,23.015,0,21.8,0z M7.668,19.198H4.536V9.085h3.133V19.198z M5.1,7.787c-0.984,0-1.41-0.66-1.41-1.478 c0-0.834,0.426-1.476,1.425-1.476h0.016c0.99,0,1.414,0.641,1.414,1.476C6.541,7.126,5.996,7.787,5.1,7.787z M20.468,19.198 h-3.133v-5.07c0-1.267-0.453-2.133-1.591-2.133c-0.867,0-1.381,0.583-1.604,1.147c-0.083,0.202-0.104,0.481-0.104,0.759v5.297 H9.969c0,0,0.041-8.475,0-9.313h3.133v1.319c0.416-0.641,1.144-1.558,2.797-1.558c2.036,0,3.569,1.332,3.569,4.198V19.198z"/>
+                </svg>
+            </a>           
+          </li>
+          <li class="nav-item">
+            <a href="https://github.com/LucasdsGomes">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M12 .298C5.373.298 0 5.67 0 12.296c0 5.133 3.324 9.49 7.942 11.018.58.107.793-.252.793-.56 0-.276-.01-1-.014-1.957-3.233.704-3.918-1.56-3.918-1.56-.53-1.348-1.293-1.71-1.293-1.71-1.06-.724.08-.71.08-.71 1.175.082 1.794 1.209 1.794 1.209 1.044 1.785 2.739 1.27 3.407.972.108-.766.405-1.27.736-1.564-2.573-.29-5.276-1.286-5.276-5.714 0-1.263.451-2.294 1.19-3.102-.12-.29-.516-1.466.113-3.05 0 0 .963-.31 3.154 1.18A11.158 11.158 0 0112 4.364c.982 0 1.963.13 2.885.383 2.19-1.49 3.152-1.18 3.152-1.18.63 1.584.236 2.76.116 3.05.741.808 1.186 1.84 1.186 3.102 0 4.438-2.706 5.42-5.288 5.704.415.36.786 1.066.786 2.145 0 1.546-.014 2.792-.014 3.168 0 .312.21.673.8.56C20.676 21.783 24 17.426 24 12.296 24 5.67 18.627.298 12 .298z"/>
+                </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="container bg-warning-subtle p-5" style="border-radius: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+    <h1 class="text-center display-4 fw-bold">Negócios Empreendedores</h1>
+    <p>A empresa agropecuária possui diversos negócios em seu portfólio. As principais áreas de atuação incluem a produção de açúcar, etanol e energia. Através de processos sustentáveis e tecnologias avançadas, a empresa busca fornecer esses produtos de alta qualidade para o mercado.</p>
+    <p>Além disso, a empresa também se dedica à produção e comercialização de leite, atendendo à demanda por laticínios frescos e nutritivos. Com foco na qualidade do produto, a empresa implementa boas práticas de criação e processamento, garantindo a satisfação dos consumidores.</p>
+    <p>A produção de arroz é outra área de destaque nos negócios da empresa. Cultivado em terras férteis e com cuidados especiais, o arroz produzido pela empresa é conhecido por sua textura e sabor excepcionais. A empresa se esforça para atender às necessidades dos consumidores, oferecendo um produto de alta qualidade.</p>
+    <p>Por fim, a empresa agropecuária também se dedica ao cultivo e comercialização de grãos diversos. Com um sistema de produção eficiente e sustentável, a empresa garante a disponibilidade de grãos de qualidade para alimentação humana e animal, contribuindo para a segurança alimentar.</p>
+    
+      <div class="d-flex flex-row">
+        <a href="#">
+          <img class="img-fluid ms-5" src="https://www.adecoagro.com/images/home/home_pr/home-azucar.svg" alt="Açucar, Etanol e Energia">
+        </a>
+        <a href="#">
+          <img class="img-fluid ms-5" src="https://www.adecoagro.com/images/home/home_pr/home-leche.svg" alt="Leite">
+        </a>
+        <a href="#">
+          <img class="img-fluid ms-5" src="https://www.adecoagro.com/images/home/home_pr/home-arroz.svg" alt="Arroz">
+        </a>
+        <a href="#">
+          <img class="img-fluid ms-5" src="https://www.adecoagro.com/images/home/home_pr/home-granos.svg" alt="Grãos">
+        </a>
+      </div>
+    </div>
+
+
+  
+  
+  
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
